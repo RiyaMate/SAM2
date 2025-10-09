@@ -16,7 +16,6 @@ import torch
 import torchvision.transforms as transforms
 from PIL import Image
 import matplotlib.pyplot as plt
-import subprocess
 from collections import OrderedDict
 
 # ------------------ CONFIGURATION ------------------
@@ -38,13 +37,13 @@ HOME = "/usr/local/airflow/dags"  # MWAA/EC2 path where script runs
 def download_from_s3(bucket, key, dest):
     s3 = boto3.client("s3", region_name=AWS_REGION)
     s3.download_file(bucket, key, dest)
-    print(f"✅ Downloaded s3://{bucket}/{key} → {dest}")
+    print(f"Downloaded s3://{bucket}/{key} -> {dest}")
 
 
 def upload_to_s3(bucket, key, src):
     s3 = boto3.client("s3", region_name=AWS_REGION)
     s3.upload_file(src, bucket, key)
-    print(f"✅ Uploaded {src} → s3://{bucket}/{key}")
+    print(f"Uploaded {src} -> s3://{bucket}/{key}")
 
 
 # ------------------ SEGMENTATION LOGIC ------------------
@@ -82,7 +81,7 @@ def run_segmentation(**kwargs):
             state_dict = torch.load(checkpoint, map_location=device)
             loaded_keys = {k: v for k, v in state_dict.items() if k in sam_seg.state_dict()}
             sam_seg.load_state_dict(loaded_keys, strict=False)
-            print("✅ Loaded pretrained weights")
+            print("Loaded pretrained weights")
         return sam_seg
 
     # Build model
@@ -124,7 +123,7 @@ def run_segmentation(**kwargs):
     plt.tight_layout()
     plt.savefig(LOCAL_OUTPUT)
     plt.close()
-    print(f"✅ Output saved to {LOCAL_OUTPUT}")
+    print(f"Output saved to {LOCAL_OUTPUT}")
 
     # Upload result to S3
     upload_to_s3(S3_BUCKET, S3_OUTPUT_KEY, LOCAL_OUTPUT)
@@ -145,4 +144,4 @@ with DAG(
         python_callable=run_segmentation,
         provide_context=True,
     )
-
+    

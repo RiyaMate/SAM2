@@ -1,0 +1,3 @@
+Requirement already satisfied: xgboost==2.0.2 in /system/conda/miniconda3/envs/cloudspace/lib/python3.10/site-packages (2.0.2)
+Requirement already satisfied: numpy in /system/conda/miniconda3/envs/cloudspace/lib/python3.10/site-packages (from xgboost==2.0.2) (1.26.4)
+Requirement already satisfied: scipy in /system/conda/miniconda3/envs/cloudspace/lib/python3.10/site-packages (from xgboost==2.0.2) (1.11.4)

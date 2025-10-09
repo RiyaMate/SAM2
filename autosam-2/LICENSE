@@ -1,0 +1,16 @@
+AutoSAM 2 License (Proprietary)
+
+Copyright (c) 2024 Greenstand. All rights reserved.
+
+This software contains:
+1. Original code from the Segment Anything Model (SAM), licensed under Apache License 2.0 (see LICENSE-APACHE).
+2. Modifications, improvements, and novel contributions ("AutoSAM 2") which are proprietary to Greenstand.
+
+TERMS OF USE:
+1. SAM Components:  
+   - Use, modification, and distribution must comply with Apache 2.0 (retain NOTICE files, attribution, etc.).
+
+2. AutoSAM 2 Modifications:  
+   - **Academic/Non-commercial use**: Permitted with attribution to Greenstand.  
+ 
+For licensing inquiries: neelanchal.gahalot@greenstand.org

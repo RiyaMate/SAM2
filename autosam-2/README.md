@@ -152,7 +152,6 @@ We have released the frontend + backend code for the SAM 2 web demo (a locally d
 - Publish research using AutoSAM 2 without permission.  
 - Use AutoSAM 2 commercially without a license.  
 
-**Contact**: [neelanchal.gahalot@greenstand.org](mailto:neelanchal.gahalot@greenstand.org)  
 
 
 ## Citing AUTOSAM2
@@ -161,7 +160,7 @@ If you use SAM 2 or the SA-V dataset in your research, please use the following 
 
 ```bibtex
 @software{Greenstand_AutoSAM2,
-  author = {Gahalot, Neelanchal and Greenstand},
+  author = {Greenstand},
   title = {{AutoSAM 2: Efficient Segment Anything Modifications}},
   year = {2024},
   publisher = {Greenstand},
